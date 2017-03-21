@@ -13,6 +13,7 @@ router.use( bodyParser.json() );
 router.post('/',function(req,res){
 
         console.log(req.body.service);
+        
         switch(req.body.service){
             case "signup uid check" : signup_aadhar_check(req,res);
                                     break;

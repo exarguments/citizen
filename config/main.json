@@ -1,6 +1,6 @@
 {
     "connectionString": "mongodb://localhost:27017/nagarsavak",
-    "host_address":"192.168.0.3",
-    "apiUrl": "http://192.168.0.3:3000/api",
+    "host_address":"192.168.1.106",
+    "apiUrl": "http://192.168.1.106:3000/api",
     "secret": "nagarsevakapp"
 }

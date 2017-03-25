@@ -20,7 +20,9 @@ router.post('/',function(req,res){
             case "signup mobile check" : signup_mobile_check(req,res);
                                     break;
             case "signup" : signup(req,res); 
-                                    break;                       
+                                    break;
+            case "login" : login(req,res);
+            				break;
             default : res.send({"status":203,"message":"service name invalid","data":null});                        
         }
 });
@@ -94,9 +96,12 @@ function signup(req,res){
 }
 
 
-function registerUser(req, res) {
-
+function login(req, res) {
+	console.log("login");
+	if(!req.body.username || req.body.username == null || req.body.username == "" )
+        res.send({"status":203,"message":"data invalid","data":null});
 }
+
 
 function updateUser(req, res) {
 

@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var gfunction = require('./models/gfunction.js');
 var app = express();
 
 // view engine setup
@@ -22,11 +23,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+//app.use('/', index);
+app.get('/',function(req,res){
+	//var response = {"name":"vishal","std":"aaaa"};
+	//res.send(gfunction.success("data",response));
+	//res.send(gfunction.error(5,"user"));
+	//res.send("Welcome to citizen world...");
+
+	console.log(Date.now());
+	res.send(gfunction.getAccessToken());
+});
+
 app.use('/users', users);
 
 // all api routes
 app.use('/api', require('./routes/apiRoute'));
+
 
 
 // catch 404 and forward to error handler
